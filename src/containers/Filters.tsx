@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { IOctoParams } from "../pages/Landing";
+import { FiltersWrapper, LabelWrapper } from "../styles";
 
 interface IFilters {
   setOctoParams: Dispatch<SetStateAction<IOctoParams>>;
@@ -16,11 +17,8 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
     }));
   };
   return (
-    <>
-      <label
-        htmlFor="
-"
-      >
+    <FiltersWrapper>
+      <LabelWrapper>
         Owner
         <Input
           name="owner"
@@ -29,8 +27,9 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.owner}
           onChange={updateFilters}
         />
-      </label>
-      <label htmlFor="">
+      </LabelWrapper>
+
+      <LabelWrapper>
         Repo
         <Input
           name="repo"
@@ -39,9 +38,9 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.repo}
           onChange={updateFilters}
         />
-      </label>
+      </LabelWrapper>
 
-      <label htmlFor="">
+      <LabelWrapper>
         Min Stars
         <Input
           name="minStars"
@@ -50,9 +49,9 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.minStars || ""}
           onChange={updateFilters}
         />
-      </label>
+      </LabelWrapper>
 
-      <label htmlFor="">
+      <LabelWrapper>
         Max Stars
         <Input
           name="maxStars"
@@ -61,9 +60,9 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.maxStars || ""}
           onChange={updateFilters}
         />
-      </label>
+      </LabelWrapper>
 
-      <label htmlFor="">
+      <LabelWrapper>
         Min Forks
         <Input
           name="minForks"
@@ -72,9 +71,9 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.minForks || ""}
           onChange={updateFilters}
         />
-      </label>
+      </LabelWrapper>
 
-      <label htmlFor="">
+      <LabelWrapper>
         Max Forks
         <Input
           name="maxForks"
@@ -83,8 +82,8 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.maxForks || ""}
           onChange={updateFilters}
         />
-      </label>
-      <label htmlFor="">
+      </LabelWrapper>
+      <LabelWrapper>
         Language
         <Input
           name="language"
@@ -93,9 +92,14 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           value={octoParams.language}
           onChange={updateFilters}
         />
-      </label>
-      <Button onClick={getOwnerRepos} btnText="Search" loading={false} />
-    </>
+      </LabelWrapper>
+      <Button
+        onClick={getOwnerRepos}
+        btnText="Search"
+        loading={false}
+        primary
+      />
+    </FiltersWrapper>
   );
 };
 
