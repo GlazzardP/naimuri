@@ -1,14 +1,17 @@
 import React from "react";
 import Landing from "./pages/Landing";
+import { FooterWrapper, HeaderWrapper } from "./styles";
 
 function App() {
   return (
     <>
-      <header>OctoKit/Github Repo Search Tool</header>
+      <HeaderWrapper>
+        <h1>OctoKit/Github Repo Search Tool</h1>
+      </HeaderWrapper>
       <Landing />
-      <footer>
+      <FooterWrapper>
         <h2>Paul Glazzard - Tech Test - Naimuri</h2>
-      </footer>
+      </FooterWrapper>
     </>
   );
 }

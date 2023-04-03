@@ -1,33 +1,20 @@
+import { useState } from "react";
+import RepoCard from "../components/RepoCard";
 import { IRepo } from "../pages/Landing";
+import { RepoListWrapper } from "../styles";
 
 interface IRepos {
   repositories: IRepo[];
 }
 
 const Repos = ({ repositories }: IRepos) => {
+  const [activeCard, setActiveCard] = useState("");
   // Receive an array of repos -> Display to user
   // Add loader/error handler if no data
   const repositoriesJsx = repositories.length ? (
-    repositories.map((repo: any) => {
-      return (
-        <div key={repo.name}>
-          <h3>{repo.name}</h3>
-          <p>{repo.description}</p>
-          <div className="content">
-            <ul>
-              <li>Stars: {repo.stargazers_count}</li>
-              <li>Forks: {repo.forks_count}</li>
-              <li>Issues: {repo.open_issues_count}</li>
-              <li>Language: {repo.language}</li>
-              <li>Watchers: {repo.watchers_count}</li>
-              <a href={repo.html_url} target="_blank" rel="noreferrer">
-                Link to Repo
-              </a>
-            </ul>
-          </div>
-        </div>
-      );
-    })
+    repositories.map((repo: IRepo) => (
+      <RepoCard data={repo} active={activeCard} setActiveCard={setActiveCard} />
+    ))
   ) : (
     <p>Loading</p>
   );
@@ -35,8 +22,7 @@ const Repos = ({ repositories }: IRepos) => {
   return (
     <>
       <h2>Repos</h2>
-
-      {repositoriesJsx}
+      <RepoListWrapper>{repositoriesJsx}</RepoListWrapper>
     </>
   );
 };

@@ -1,14 +1,17 @@
+import { ButtonWrapper } from "../styles";
+
 interface IButton {
   onClick: any;
   btnText: string;
   loading: boolean;
+  primary: boolean;
 }
 
-const Button = ({ onClick, btnText, loading }: IButton) => {
+const Button = ({ onClick, btnText, loading, primary }: IButton) => {
   return (
-    <button disabled={loading} onClick={onClick}>
+    <ButtonWrapper disabled={loading} onClick={onClick} primary={primary}>
       {loading ? "Loading" : btnText}
-    </button>
+    </ButtonWrapper>
   );
 };
 

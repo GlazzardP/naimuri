@@ -1,4 +1,5 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from "react";
+import { InputWrapper } from "../styles";
 
 interface IInput {
   type: string;
@@ -11,13 +12,13 @@ interface IInput {
 
 const Input = ({ type, value, onChange, placeholder, name }: IInput) => {
   return (
-    <input
+    <InputWrapper
       type={type}
       name={name}
       onChange={onChange}
       value={value}
       placeholder={placeholder}
-    />
+    ></InputWrapper>
   );
 };
 

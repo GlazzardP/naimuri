@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Filters from "../containers/Filters";
 import Repos from "../containers/Repos";
+import { LandingWrapper } from "../styles";
 
 const { Octokit } = require("@octokit/rest");
 console.log(`${process.env.REACT_APP_OCTOKIT_TOKEN}`);
 
-const octokit = new Octokit({
-  auth: `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`,
+export const octokit = new Octokit({
+  auth: `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`,
 });
 
 /* 
@@ -16,6 +17,7 @@ const octokit = new Octokit({
 export interface IRepo {
   name: string;
   owner: string;
+  repo: string;
   description: string;
   html_url: string;
   forks_count: number;
@@ -119,14 +121,14 @@ const Landing = () => {
     getOwnerRepos();
   }, []);
   return (
-    <>
+    <LandingWrapper>
       <Filters
         octoParams={octoParams}
         setOctoParams={setOctoParams}
         getOwnerRepos={getOwnerRepos}
       />
       <Repos repositories={repositories} />
-    </>
+    </LandingWrapper>
   );
 };
 
