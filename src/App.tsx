@@ -1,14 +1,28 @@
 import React from "react";
 import Landing from "./pages/Landing";
+import {
+  ContentColumn,
+  FooterWrapper,
+  HeaderWrapper,
+  PageWrapper,
+} from "./styles";
 
 function App() {
   return (
     <>
-      <header>OctoKit/Github Repo Search Tool</header>
-      <Landing />
-      <footer>
-        <h2>Paul Glazzard - Tech Test - Naimuri</h2>
-      </footer>
+      <HeaderWrapper>
+        <ContentColumn>
+          <h1>OctoKit/Github Repo Search Tool</h1>
+        </ContentColumn>
+      </HeaderWrapper>
+      <PageWrapper>
+        <Landing />
+      </PageWrapper>
+      <FooterWrapper>
+        <ContentColumn>
+          <h2>Paul Glazzard - Tech Test - Naimuri</h2>
+        </ContentColumn>
+      </FooterWrapper>
     </>
   );
 }
