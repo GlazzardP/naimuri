@@ -5,6 +5,8 @@ const octokit = new Octokit({
 });
 
 const Landing = () => {
+  // GET OCTO DATA
+
   return <p>Landing</p>;
 };
 
