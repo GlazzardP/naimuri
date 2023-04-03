@@ -36,7 +36,7 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="repo"
           type="text"
           placeholder="Repo Name"
-          value={octoParams.owner}
+          value={octoParams.repo}
           onChange={updateFilters}
         />
       </label>
@@ -47,7 +47,7 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="minStars"
           type="text"
           placeholder="Min Stars"
-          value={octoParams.owner}
+          value={octoParams.minStars}
           onChange={updateFilters}
         />
       </label>
@@ -58,7 +58,29 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="maxStars"
           type="text"
           placeholder="Max Stars"
-          value={octoParams.owner}
+          value={octoParams.maxStars}
+          onChange={updateFilters}
+        />
+      </label>
+
+      <label htmlFor="">
+        Min Forks
+        <Input
+          name="minForks"
+          type="text"
+          placeholder="Min Forks"
+          value={octoParams.minForks}
+          onChange={updateFilters}
+        />
+      </label>
+
+      <label htmlFor="">
+        Max Forks
+        <Input
+          name="maxForks"
+          type="text"
+          placeholder="Max Forks"
+          value={octoParams.maxForks}
           onChange={updateFilters}
         />
       </label>
