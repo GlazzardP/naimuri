@@ -1,7 +1,8 @@
 import { useState } from "react";
+import Loader from "../components/Loader";
 import RepoCard from "../components/RepoCard";
 import { IRepo } from "../pages/Landing";
-import { RepoListWrapper } from "../styles";
+import { RepoContainer, RepoListWrapper } from "../styles";
 
 interface IRepos {
   repositories: IRepo[];
@@ -16,14 +17,14 @@ const Repos = ({ repositories }: IRepos) => {
       <RepoCard data={repo} active={activeCard} setActiveCard={setActiveCard} />
     ))
   ) : (
-    <p>Loading</p>
+    <Loader />
   );
 
   return (
-    <>
+    <RepoContainer>
       <h2>Repos</h2>
       <RepoListWrapper>{repositoriesJsx}</RepoListWrapper>
-    </>
+    </RepoContainer>
   );
 };
 

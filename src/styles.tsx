@@ -58,6 +58,7 @@ export const HeaderWrapper = styled.header`
   background: ${navy};
   h1 {
     color: ${orange};
+    text-align: left;
   }
 `;
 
@@ -120,9 +121,9 @@ const spin = keyframes`
 
 export const LoadingSpinner = styled.div`
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #0074d9;
+  width: 40px;
+  height: 40px;
+  border: 2px solid ${navy};
   border-radius: 50%;
   border-top-color: transparent;
   animation: ${spin} 0.6s linear infinite;
@@ -137,15 +138,41 @@ export const LoadingWrapper = styled.div`
 
 export const LandingWrapper = styled.section`
   padding: 1rem;
+  @media only screen and (min-width: 800px) {
+    display: flex;
+    gap: 2rem;
+  }
 `;
-
+export const RepoContainer = styled.div`
+  width: 100%;
+`;
 export const RepoListWrapper = styled.div`
   max-height: 60vh;
   overflow-y: scroll;
+
+  @media only screen and (min-width: 800px) {
+    max-height: 75vh;
+  }
 `;
 
 export const FiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${gap};
+  @media only screen and (min-width: 800px) {
+    width: 40%;
+  }
+`;
+
+export const PageWrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+`;
+
+export const ContentColumn = styled.div`
+  max-width: 1400px;
+  margin: auto;
 `;

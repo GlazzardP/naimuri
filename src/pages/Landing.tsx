@@ -50,18 +50,10 @@ const Landing = () => {
   const [repositories, setRepositories] = useState<IRepo[]>([]);
 
   const getOwnerRepos = async () => {
-    // const queryParams: any = {
-    //   per_page: 100, // maximum number of results per page
-    //   sort: "updated", // sort by most recently updated
-    //   direction: "desc", // sort in descending order
-    // };
-
-    // console.log({ queryParams });
-
     await octokit.repos
       .listForUser({
         username: octoParams.owner,
-        // ...queryParams,
+        repo: octoParams.repo,
       })
       .then((response: any) => {
         console.log("a", response.data);
