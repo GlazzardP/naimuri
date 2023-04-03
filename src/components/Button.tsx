@@ -3,7 +3,7 @@ import { ButtonWrapper } from "../styles";
 interface IButton {
   onClick: any;
   btnText: string;
-  loading: boolean;
+  loading?: boolean;
   primary: boolean;
 }
 
