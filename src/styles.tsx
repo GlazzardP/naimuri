@@ -80,17 +80,16 @@ export const RepoDetailsWrapper = styled.div<iSCOpen>`
   width: 100%;
   transition: all 0.3s;
 
-  .heading {
-    background: ${navy};
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
+  span:first-child {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-
-    p {
-      margin-top: ${gap};
-    }
   }
+
+  p {
+    margin-top: ${gap};
+  }
+
   .content {
     border-radius: 10px;
     padding-inline: 10px;

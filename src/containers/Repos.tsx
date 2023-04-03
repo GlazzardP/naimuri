@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Loader from "../components/Loader";
 import RepoCard from "../components/RepoCard";
-import { IRepo } from "../pages/Landing";
+import { IOctoParams, IRepo } from "../pages/Landing";
 import { RepoContainer, RepoListWrapper } from "../styles";
 
 interface IRepos {
@@ -14,7 +14,12 @@ const Repos = ({ repositories }: IRepos) => {
   // Add loader/error handler if no data
   const repositoriesJsx = repositories.length ? (
     repositories.map((repo: IRepo) => (
-      <RepoCard data={repo} active={activeCard} setActiveCard={setActiveCard} />
+      <RepoCard
+        key={repo.name}
+        data={repo}
+        active={activeCard}
+        setActiveCard={setActiveCard}
+      />
     ))
   ) : (
     <Loader />

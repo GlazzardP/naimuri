@@ -4,10 +4,9 @@ import Repos from "../containers/Repos";
 import { LandingWrapper } from "../styles";
 
 const { Octokit } = require("@octokit/rest");
-console.log(`${process.env.REACT_APP_OCTOKIT_TOKEN}`);
 
 export const octokit = new Octokit({
-  auth: `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`,
+  auth: `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`,
 });
 
 /* 
@@ -40,7 +39,7 @@ const Landing = () => {
   // GET OCTO DATA
   const [octoParams, setOctoParams] = useState<IOctoParams>({
     owner: "facebook",
-    repo: "react",
+    repo: "",
     minStars: null,
     maxStars: null,
     minForks: null,
@@ -53,14 +52,10 @@ const Landing = () => {
     await octokit.repos
       .listForUser({
         username: octoParams.owner,
-        repo: octoParams.repo,
+        // repo: octoParams.repo,
       })
       .then((response: any) => {
-        console.log("a", response.data);
-
         let responses: IRepo[] = response.data;
-
-        console.log({ octoParams });
 
         if (octoParams.minStars) {
           console.log("Min Stars");

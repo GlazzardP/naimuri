@@ -1,48 +1,17 @@
-1. ENV is let in for ease of use in test purposes, normally would be includd in .gitIgnore
+Installation Instructions
 
-# Getting Started with Create React App
+1. npm i
+2. npm start
+3. npm run build and npm test are available if required, however, there are no tests written
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Implementation Thoughts
 
-## Available Scripts
+I was quite happy with Octokit which I had never used before. Initially struggling to get more than repo back at a time. Once I got this working, I tried for a while to use parameters inside the Octokit method. Reading the docs, it doesn't look like they are build in. This is something I would like to read more on if I had more time.
 
-In the project directory, you can run:
+Once I was getting a consistent response back, I decided to use useState instead of setting up Redux. This was purely a time based decision and would want to use Redux/Context etc if more time/building out the project.
 
-### `npm start`
+With regards to testing, I would like to add tests, primarily to check the filtering is working and that the page 'fails gracefully' if anthing goes wrong i.e. Loader on the page if not repos found.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I was initially going to use an .env for the personal access token but thought including the .env inside repo didn't make sense. I would use an .env file in normal circumstances.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For the ReadMe, I was returning a successful response earlier so I'm slightly frustrated this is now not working. The idea was to call the readme within a RepoCard, the readme would then be displayed in a modal. Currently commented out as I ran out of time.
