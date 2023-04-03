@@ -1,3 +1,5 @@
+1. ENV is let in for ease of use in test purposes, normally would be includd in .gitIgnore
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
