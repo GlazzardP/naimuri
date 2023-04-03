@@ -47,7 +47,7 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="minStars"
           type="text"
           placeholder="Min Stars"
-          value={octoParams.minStars}
+          value={octoParams.minStars || ""}
           onChange={updateFilters}
         />
       </label>
@@ -58,7 +58,7 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="maxStars"
           type="text"
           placeholder="Max Stars"
-          value={octoParams.maxStars}
+          value={octoParams.maxStars || ""}
           onChange={updateFilters}
         />
       </label>
@@ -69,7 +69,7 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="minForks"
           type="text"
           placeholder="Min Forks"
-          value={octoParams.minForks}
+          value={octoParams.minForks || ""}
           onChange={updateFilters}
         />
       </label>
@@ -80,7 +80,17 @@ const Filters = ({ setOctoParams, octoParams, getOwnerRepos }: IFilters) => {
           name="maxForks"
           type="text"
           placeholder="Max Forks"
-          value={octoParams.maxForks}
+          value={octoParams.maxForks || ""}
+          onChange={updateFilters}
+        />
+      </label>
+      <label htmlFor="">
+        Language
+        <Input
+          name="language"
+          type="text"
+          placeholder="Language"
+          value={octoParams.language}
           onChange={updateFilters}
         />
       </label>
