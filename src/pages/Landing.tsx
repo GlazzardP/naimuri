@@ -24,9 +24,14 @@ export interface IRepo {
   watchers_count: number;
   language: string;
 }
+
+export interface IOctoParams {
+  owner: string;
+  repo: string;
+}
 const Landing = () => {
   // GET OCTO DATA
-  const [octoParams, setOctoParams] = useState({
+  const [octoParams, setOctoParams] = useState<IOctoParams>({
     owner: "facebook",
     repo: "react",
     // minStars: 0,
@@ -53,7 +58,11 @@ const Landing = () => {
   }, []);
   return (
     <>
-      <Filters />
+      <Filters
+        octoParams={octoParams}
+        setOctoParams={setOctoParams}
+        getOwnerRepos={getOwnerRepos}
+      />
       <Repos repositories={repositories} />
     </>
   );

@@ -1,7 +1,15 @@
-const Button = () => {
-  // SET Button
+interface IButton {
+  onClick: any;
+  btnText: string;
+  loading: boolean;
+}
 
-  return <button></button>;
+const Button = ({ onClick, btnText, loading }: IButton) => {
+  return (
+    <button disabled={loading} onClick={onClick}>
+      {loading ? "Loading" : btnText}
+    </button>
+  );
 };
 
 export default Button;
