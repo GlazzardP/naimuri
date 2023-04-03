@@ -10,7 +10,7 @@ const Repos = ({ repositories }: IRepos) => {
   const repositoriesJsx = repositories.length ? (
     repositories.map((repo: any) => {
       return (
-        <div>
+        <div key={repo.name}>
           <h3>{repo.name}</h3>
           <p>{repo.description}</p>
           <div className="content">
