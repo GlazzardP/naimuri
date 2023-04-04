@@ -22,6 +22,7 @@ function App() {
         <ContentColumn>
           <h2>Paul Glazzard - Tech Test - Naimuri</h2>
         </ContentColumn>
+        x
       </FooterWrapper>
     </>
   );
