@@ -1,10 +1,12 @@
-Installation Instructions
+## Installation Instructions
 
 1. npm i
 2. npm start
-3. npm run build and npm test are available if required, however, there are no tests written
+3. You will also need to create a Personal Access Token, you can do this through Github. You will need to go to Settings, Developer Settings, Personal Access Token, Tokens (classic). You can then create a new token, this needs to be pasted into the using the existing token name.
 
-Implementation Thoughts
+npm run build and npm test are available if required, however, there are no tests written
+
+## Implementation Thoughts
 
 I was quite happy with Octokit which I had never used before. Initially struggling to get more than repo back at a time. Once I got this working, I tried for a while to use parameters inside the Octokit method. Reading the docs, it doesn't look like they are build in. This is something I would like to read more on if I had more time.
 
@@ -15,3 +17,5 @@ With regards to testing, I would like to add tests, primarily to check the filte
 I was initially going to use an .env for the personal access token but thought including the .env inside repo didn't make sense. I would use an .env file in normal circumstances.
 
 For the ReadMe, I was returning a successful response earlier so I'm slightly frustrated this is now not working. The idea was to call the readme within a RepoCard, the readme would then be displayed in a modal. Currently commented out as I ran out of time.
+
+Lastly, I had a few issues with the PAT, becoming invalid very quickly. This is why I've included step 3 in the Installation Instructions

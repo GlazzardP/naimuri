@@ -6,7 +6,7 @@ import { LandingWrapper } from "../styles";
 const { Octokit } = require("@octokit/rest");
 
 export const octokit = new Octokit({
-  auth: `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`, // .env normally
+  auth: `${process.env.REACT_APP_OCTOKIT_TOKEN}`, // .env normally
 });
 
 /* 
